@@ -15,17 +15,8 @@ function setup() {
 
   foodObj = new Food();
 
-  // foodStock=database.ref('');
-  // foodStock.on("value",readStock);
-
-  // foodStock=database.ref('Food');
-  // foodStock.on(readStock);
-
-  // foodStock=database.ref('Food');
-  // foodStock("value",readStock);
-
-  // foodStock=database.ref('Food');
-  // foodStock.on("value",readStock);
+  foodStock=database.ref('Food');
+  foodStock.on("value",readStock);
   
   dog=createSprite(800,200,150,150);
   dog.addImage(sadDog);
@@ -40,7 +31,7 @@ function setup() {
   // addFood.position(800,95);
   // addFood.Pressed(addFoods);
 
-  //  addFood.createButton("Add Food");
+  // addFood.createButton("Add Food");
   // addFood.position(800,95);
   // addFood.mousePressed(addFoods);
 
@@ -48,7 +39,7 @@ function setup() {
   // addFood.position(800,95);
   // addFood.mousePressed(addFoods);
 
-   // addFood=Button("Add Food");
+  // addFood=Button("Add Food");
   // addFood.position(800,95);
   // addFood.mousePressed(addFoods);
 
@@ -65,37 +56,16 @@ function draw() {
  
   fill(255,255,254);
   textSize(15);
+ 
+//code to display the feed time
+  if(lastFed>=12){
+    text("Last Feed : "+ lastFed%12 + " PM", 350,30);
+  }else if(lastFed==0){
+     text("Last Feed : 12 AM",350,30);
+  }else{
+     text("Last Feed : "+ lastFed + " AM", 350,30);
+  }
 
-
-  // if(lastFed>=0){
-  //   text("Last Feed : "+ lastFed%12 + " PM", 350,30);
-  //  }else if(lastFed==0){
-  //    text("Last Feed : 12 AM",350,30);
-  //  }else{
-  //    text("Last Feed : "+ lastFed + " AM", 350,30);
-  //  }
-
-    // if(lastFed>=12){
-  //   text("Last Feed : "+ lastFed%12 + " PM", 350,30);
-  //  }else if(lastFed==0){
-  //    text("Last Feed : 12 AM",350,30);
-  //  }
-
-    // if(lastFed>=12){
-  //   text("Last Feed : "+ lastFed%12 + " PM", 350,30);
-  //  }else if(lastFed==0){
-  //    text("Last Feed : 12 AM",350,30);
-  //  }else{
-  //    text("Last Feed : "+ lastFed + " AM", 350,30);
-  //  }
-
-    // if(lastFed>1){
-  //   text("Last Feed : "+ lastFed%12 + " PM", 350,30);
-  //  }else if(lastFed==3){
-  //    text("Last Feed : 12 AM",350,30);
-  //  }else{
-  //    text("Last Feed : "+ lastFed + " AM", 350,30);
-  //  }
  
   drawSprites();
 }
